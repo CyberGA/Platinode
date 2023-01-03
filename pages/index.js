@@ -2,9 +2,27 @@
 export default function Home() {
   return (
     <>
-     <main>
         <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-     </main>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
     </>
   )
 }
