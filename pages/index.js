@@ -1,29 +1,29 @@
 
 export default function Home() {
   return (
-    <>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-        <h1 className="text-[64px] font-bold underline">Platinum Investments</h1>
-    </>
+    <div className="pt-[80px]">
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+        <h1 className="text-[64px] text-black font-bold underline">Platinum Investments</h1>
+    </div>
   )
 }
 

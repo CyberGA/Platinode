@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <>
         <Header />
-        <main className="mt-[80px]">
+        <main>
           <Component {...pageProps} />
         </main>
       </>

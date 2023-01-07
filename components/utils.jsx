@@ -7,6 +7,7 @@ export const UButton = styled.button`
   height: ${({ fit }) => (fit ? "fit-content" : "42px")};
   ${({ height }) => height && `height: ${height}`};
   cursor: pointer;
+  font-size: 14px;
 
   @media (max-width: 768px) {
     padding-inline: ${({ padX }) => padX ?? "87.5px"};
