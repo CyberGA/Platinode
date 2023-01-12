@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@mantine/carousel": "^5.10.0",
+    "@mantine/core": "^5.10.0",
     "@next/font": "13.1.1",
+    "embla-carousel-react": "^7.0.5",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "ethers": "^5.7.2",
     "next": "13.1.1",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^5.3.6"
+    "react-icons": "^4.7.1",
+    "styled-components": "^5.3.6",
+    "web3modal": "^1.9.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

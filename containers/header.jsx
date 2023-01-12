@@ -1,18 +1,18 @@
 import Navigation from "@/components/navigation";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import useThemeDetector from "@/hooks/useThemeDetector";
 import { UButton } from "@/components/utils";
+
+
 
 function Header() {
   const router = useRouter();
-  const { isDarkTheme } = useThemeDetector;
 
   return (
     <Navigation
       className={`${
         (router.pathname == "/signin" || router.pathname == "/signup") ? "px-16" : "px-12"
-      } h-[80px] backdrop-filter backdrop-blur-xl`}
+      } h-[120px] backdrop-filter backdrop-blur-xl border-b`}
     >
       <div
         className="flex flex-row items-center cursor-pointer"
@@ -45,10 +45,8 @@ function Header() {
             </Navigation.Link>
           </div>
           <div className="flex flex-row gap-x-[30px] items-center">
-            <Navigation.Link href="signin">Sign in</Navigation.Link>
             <UButton
-              bg="#3bd4e1"
-              className="rounded-full px-5 text-black/60 font-medium"
+              className="flex items-center bg-secondary px-5 py-6 text-primaryText font-bold shadow-lg rounded-lg"
             >
               Connect Wallet
             </UButton>

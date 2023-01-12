@@ -22,10 +22,10 @@ export const NavLink = styled.a`
     font-size: 18px;
     transition: all 350ms ease-out;
     pointer-events: ${({ disabled}) => (disabled ? "none" : "auto")};
-    color: ${({active}) => active ? "#3bd4e1" : "#657071"};
-    font-weight: ${({active}) => active ? "bold" : "normal"};
+    color: ${({active}) => active ? "#3bd4e1" : "#303c3d"};
 
     &:hover {
         color: #3bd4e1;
+        font-weight: bold;
     }
 `;

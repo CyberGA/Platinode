@@ -1,7 +1,7 @@
 
 export default function HowItWorks() {
     return (
-      <div className="pt-[80px]">
+      <div>
           <h1 className="text-[64px] font-bold underline">How it works</h1>
           <h1 className="text-[64px] font-bold underline">How it works</h1>
           <h1 className="text-[64px] font-bold underline">How it works</h1>

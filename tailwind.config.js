@@ -3,9 +3,15 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./containers/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily:{
+        'plat': [ 'Rowdies', "cursive", "ui-monospace, Menlo", "Monaco", 'Cascadia Mono', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+        'Fira Mono', 'Droid Sans Mono', 'Courier New', "monospace"]
+      },
       colors: {
-        primary: "#3bd4e1",
-        "primary-text": "#6a7273",
+        primaryText: "#303c3d",
+        secondary: "#3bd4e1",
+        secondaryLight: "#E8FCFE"
       }
     },
   },
