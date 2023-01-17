@@ -36,7 +36,7 @@ export default function ProjectCard({src, isLive = true, alt, title, desc, amoun
       </Text>
       <Progress color="#3bd4e1" value={progress} label={`${progress}%`} size="xl" radius="xl"  />
 
-      <Button variant="light" size="md" fullWidth mt="md" radius="md" className="text-secondary font-plat" onClick={() => router.push({ pathname: link})} >
+      <Button variant="light" size="md" fullWidth mt="md" radius="md" className="text-secondary font-plat ease-in duration-300" onClick={() => router.push({ pathname: link})} >
         View details
       </Button>
     </Card>

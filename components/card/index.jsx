@@ -4,10 +4,15 @@ function CardNormal({ src, alt, title, desc }) {
   return (
     <Card shadow="sm" p="xl" component="div">
       <Card.Section>
-        <Image src={src} height={260} alt="No way!" />
+        <Image src={src} height={260} alt="No way!" fit="objectFit" />
       </Card.Section>
 
-      <Text weight={700} size="xl" mt="md" className="text-primaryText font-plat">
+      <Text
+        weight={700}
+        size="xl"
+        mt="md"
+        className="text-primaryText font-plat"
+      >
         {title}
       </Text>
 

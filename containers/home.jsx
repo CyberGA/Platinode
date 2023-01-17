@@ -3,7 +3,7 @@ import { Image } from "@mantine/core";
 import { UButton } from "@/components/utils";
 import ProjectCard from "@/components/card/project";
 import Link from "next/link"
-import StartProjet from "@/components/startProject"
+import StartProjet from "@/components/start-project"
 
 
 export default function HomeContanier() {
