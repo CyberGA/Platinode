@@ -4,21 +4,20 @@ import Image from "next/image";
 const steps = [
   "Explore projects on the platform",
   "Select any project of your choice and view project details",
-  "Invest any amount of your choice in the chosen project",
+  "Donate any amount of your choice to the chosen project",
 ];
 
 function HowItWorksContainer() {
   return (
     <div className="bg-white px-[5vw] py-[100px]">
       <h1 className="text-primaryText font-bold text-center text-4xl">
-        How Platinum Investment Works
+        How Platinode Fundraiser Works
       </h1>
 
       <div className="flex justify-center w-full mt-8">
         <p className="text-primaryText text-center text-lg max-w-[850px]">
-          Platinum Investment is the best place to fundraise, whether you are an
-          individual, group, or organization and also grow your investment
-          portfolio.
+          Platinode Fundraiser is the best place to fundraise, whether you are an
+          individual, group, or organization.
         </p>
       </div>
 

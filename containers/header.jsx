@@ -9,7 +9,6 @@ import { GrProjects } from "react-icons/gr";
 import { CgMenuRight } from "react-icons/cg";
 import { Drawer } from "@mantine/core";
 import {useState } from "react";
-import { FaUser } from "react-icons/fa";
 import StartAProject from "@/components/start-project";
 
 function Header() {
@@ -137,8 +136,9 @@ function Header() {
               )}
               <GrProjects
                 color="#303c3d"
-                size="3"
+                size="30"
                 className="cursor-pointer"
+                title="My projects"
                 onClick={() => router.push("/project/account")}
               />
             </div>

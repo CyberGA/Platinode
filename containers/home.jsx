@@ -16,7 +16,6 @@ export default function HomeContanier() {
     let data = await getProjects();
 
     data = data.filter((res, id) => id < 3)
-    console.log(data);
     setProjects(data);
     setLoading((prev) => false);
   };

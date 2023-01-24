@@ -22,7 +22,10 @@ export default function MyProjectContainer() {
 
   return (
     <div className=" py-20 px-[8vw]">
-      <div className="flex justify-center fixed top-[120px] right-0 left-0 z-[99] backdrop-filter backdrop-blur-xl p-4">
+      <div className="flex flex-col justify-center items-center gap-5 fixed top-[120px] right-0 left-0 z-[99] backdrop-filter backdrop-blur-xl p-4">
+        <div>
+          <p className="text-primaryText font-bold text-[24px]">My Projects</p>
+        </div>
         <div className="flex flex-row items-center pr-[16px] gap-x-[16px] border border-[#485E5F] rounded-[5px] h-[60px] w-full max-w-[616px] bg-white clip">
           <UInput type="text" placeholder="Search for a project" />
           <UButton
@@ -34,10 +37,11 @@ export default function MyProjectContainer() {
           </UButton>
         </div>
       </div>
-      <div className="flex flex-wrap mt-[20px] gap-[26px] ">
-        {projects.map((project) => (
+      <div className="flex flex-wrap mt-[100px] gap-[26px] ">
+        {projects.map((project, id) => (
           <ProjectCard
-            daysLeft={2}
+            key={id}
+            expires={project.deadline}
             owner={project.owner}
             link={`/explore/Wheat production`}
             src={project.image}

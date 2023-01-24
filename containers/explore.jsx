@@ -37,9 +37,10 @@ export default function ExploreContainer() {
         </div>
       </div>
       <div className="flex flex-wrap mt-[20px] gap-[26px] ">
-        {projects.map((project) => (
+        {projects.map((project, id) => (
           <ProjectCard
-            daysLeft={2}
+            key={id}
+            expires={project.deadline}
             owner={project.owner}
             link={`/explore/Wheat production`}
             src={project.image}
