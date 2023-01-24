@@ -74,7 +74,7 @@ export default function ProjectDetails() {
               title={`Raised of ${project?.amountRequested}`}
               value={project?.amountReceived}
             />
-            <CountBox title="Total Donators" value={donators.length} />
+            {/* <CountBox title="Total Donators" value={donators.length} /> */}
           </div>
         </div>
 
@@ -106,7 +106,7 @@ export default function ProjectDetails() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="font-epilogue font-semibold text-[18px] text-primaryText uppercase">
                 Donators
               </h4>
@@ -132,7 +132,7 @@ export default function ProjectDetails() {
                   </p>
                 )}
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex-1">
