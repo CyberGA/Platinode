@@ -101,13 +101,15 @@ export default function GlobalProvider({ children }) {
       createProject: publishProject,
       getProjects,
       getUserProjects,
+      getDonations,
+      donate,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, address]);
 
   useEffect(() => {
-    connect()
-  }, [])
+    connect();
+  }, []);
   
 
   return (

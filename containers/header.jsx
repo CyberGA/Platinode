@@ -4,6 +4,7 @@ import Image from "next/image";
 import { UButton } from "@/components/utils";
 import { useGlobalContext } from "@/contexts/global-context";
 import { GrOverview } from "react-icons/gr";
+import { VscChromeClose } from "react-icons/vsc";
 import { TbWorld } from "react-icons/tb";
 import { GrProjects } from "react-icons/gr";
 import { CgMenuRight } from "react-icons/cg";
@@ -150,9 +151,19 @@ function Header() {
               Connect Wallet
             </UButton>
           )}
-          <div onClick={() => setOpen(true)} className="md:hidden">
-            <CgMenuRight color="#000" size={28} className="cursor-pointer" />
-          </div>
+          {open ? (
+            <div onClick={() => setOpen((prev) => false)} className="md:hidden">
+              <VscChromeClose
+                color="#000"
+                size={28}
+                className="cursor-pointer"
+              />
+            </div>
+          ) : (
+            <div onClick={() => setOpen(prev => true)} className="md:hidden">
+              <CgMenuRight color="#000" size={28} className="cursor-pointer" />
+            </div>
+          )}
         </div>
       </>
     </Navigation>

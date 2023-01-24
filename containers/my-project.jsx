@@ -41,9 +41,10 @@ export default function MyProjectContainer() {
         {projects.map((project, id) => (
           <ProjectCard
             key={id}
+            pId={project.pId}
             expires={project.deadline}
             owner={project.owner}
-            link={`/explore/Wheat production`}
+            link={`/explore/${project.title}`}
             src={project.image}
             title={project.title}
             desc={project.desc}

@@ -14,6 +14,7 @@ import { daysRemaining, shortened } from "@/lib";
 
 export default function ProjectCard({
   src,
+  pId,
   isLoading,
   expires,
   alt,
@@ -22,10 +23,28 @@ export default function ProjectCard({
   amountRequested,
   amountReceived,
   link,
-  owner
+  owner,
 }) {
   const router = useRouter();
   const progress = (amountReceived / amountRequested) * 100;
+
+  const viewDetailsHandle = () => {
+    sessionStorage.removeItem("project");
+    const data = {
+      pId,
+      src,
+      expires,
+      title,
+      desc,
+      amountRequested,
+      amountReceived,
+      owner,
+    };
+
+    sessionStorage.setItem("project", JSON.stringify(data));
+
+    router.push({ pathname: link });
+  };
 
   return (
     <Card shadow="sm" p="lg" radius="md" withBorder className="sm:w-[288px]">
@@ -47,7 +66,7 @@ export default function ProjectCard({
           p="md"
           className="font-plat"
         >
-          {expires && daysRemaining(expires) !== 0 ? "Live"  : "Close"}
+          {expires && daysRemaining(expires) !== 0 ? "Live" : "Close"}
         </Badge>
       </Group>
 
@@ -89,7 +108,7 @@ export default function ProjectCard({
         mt="md"
         radius="md"
         className="text-secondary font-plat ease-in duration-300"
-        onClick={() => router.push({ pathname: link })}
+        onClick={viewDetailsHandle}
       >
         View details
       </Button>

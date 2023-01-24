@@ -62,8 +62,8 @@ export default function CreateProjectContainer() {
   }
 
   return (
-    <div className="w-full px-[8vw] py-20 flex flex-row items-center justify-center">
-      <div className="flex flex-col items-center w-full bg-white py-10 px-20 rounded-lg">
+    <div className="w-full px-[4vw] sm:px-[8vw] py-20 flex flex-row items-center justify-center">
+      <div className="flex flex-col items-center w-full bg-white py-10 px-2 sm:px-20 rounded-lg">
         <div className="bg-secondaryLight p-5 w-full rounded-lg">
           <p className="text-primaryText font-bold text-xl text-center">
             Start a Project
@@ -71,7 +71,7 @@ export default function CreateProjectContainer() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-5 mt-6 w-full flex flex-col gap-4"
+          className="bg-white p-2 sm:p-5 mt-6 w-full flex flex-col gap-4"
         >
           <div className="w-full flex flex-wrap gap-[10px]">
             <div className="flex w-full flex-1 flex-col">
