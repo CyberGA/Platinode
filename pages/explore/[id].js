@@ -5,3 +5,5 @@ export default function Details() {
         <ProjectDetails />
     )
 }
+
+Details.title = "Project Details"

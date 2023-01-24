@@ -53,7 +53,7 @@ export default function GlobalProvider({ children }) {
       pId: i,
     }));
 
-    return parsedProjects;
+    return parsedProjects.reverse();
   };
 
 
@@ -76,7 +76,6 @@ export default function GlobalProvider({ children }) {
   };
 
   const getDonations = async (pId) => {
-    console.log(pId)
     const donations = await contract.call("getDonators", pId);
     const numberOfDonations = donations[0].length;
 
