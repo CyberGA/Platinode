@@ -76,6 +76,7 @@ export default function GlobalProvider({ children }) {
   };
 
   const getDonations = async (pId) => {
+    console.log(pId)
     const donations = await contract.call("getDonators", pId);
     const numberOfDonations = donations[0].length;
 

@@ -16,7 +16,8 @@ export default function ProjectDetails() {
   const countDown = daysRemaining(project?.expires);
 
   const fetchDonators = async () => {
-    const data = await getDonations(project?.pId);
+    const details = JSON.parse(sessionStorage.getItem("project"));
+    const data = await getDonations(details?.pId);
 
     setDonators(data);
   };
@@ -41,7 +42,7 @@ export default function ProjectDetails() {
 
   return (
     <div className="flex flex-row bg-white w-full px-[5vw] py-[8vh] text-primaryText">
-      <div>
+      <div className="w-full">
         <p className="text-primaryText text-[24px] font-bold">
           {project?.title}
         </p>
@@ -68,13 +69,13 @@ export default function ProjectDetails() {
             </div>
           </div>
 
-          <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
+          <div className="flex flex-row md:flex-col flex-1 md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
             <CountBox title="Days Left" value={countDown} />
             <CountBox
               title={`Raised of ${project?.amountRequested}`}
               value={project?.amountReceived}
             />
-            {/* <CountBox title="Total Donators" value={donators.length} /> */}
+            <CountBox title="Total Donators" value={donators.length} />
           </div>
         </div>
 
@@ -95,7 +96,7 @@ export default function ProjectDetails() {
             </div>
 
             <div>
-              <h4 className="font-epilogue font-semibold text-[18px] text-primary uppercase">
+              <h4 className="font-epilogue font-semibold text-[18px] text-primaryText uppercase">
                 Project Details
               </h4>
 
@@ -106,7 +107,7 @@ export default function ProjectDetails() {
               </div>
             </div>
 
-            {/* <div>
+            <div>
               <h4 className="font-epilogue font-semibold text-[18px] text-primaryText uppercase">
                 Donators
               </h4>
@@ -132,7 +133,7 @@ export default function ProjectDetails() {
                   </p>
                 )}
               </div>
-            </div> */}
+            </div>
           </div>
 
           <div className="flex-1">
