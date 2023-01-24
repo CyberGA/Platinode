@@ -7,4 +7,4 @@ export default function Home() {
 }
 
 Home.title = "Home Page";
-Home.description = "Platinum, a platform to support great projects";
+Home.description = "Platinode, a platform to support great projects";

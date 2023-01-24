@@ -7,4 +7,4 @@ export default function HowItWorks() {
   }
   
   HowItWorks.title = "How It Works";
-  HowItWorks.description = "Platinum, a platform to support great projects";
+  HowItWorks.description = "Platinode, a platform to support great projects";

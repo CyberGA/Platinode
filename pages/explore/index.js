@@ -7,4 +7,4 @@ export default function Explore() {
   }
   
   Explore.title = "Explore";
-  Explore.description = "Platinum, a platform to support great projects";
+  Explore.description = "Platinode, a platform to support great projects";

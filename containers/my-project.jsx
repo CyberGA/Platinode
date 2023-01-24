@@ -1,27 +1,25 @@
 import ProjectCard from "@/components/card/project";
 import { UInput, UButton } from "@/components/utils";
 import { BsArrowRight } from "react-icons/bs";
-import { Pagination } from "@mantine/core";
 import { useGlobalContext } from "@/contexts/global-context";
 import { useEffect, useState } from "react";
 
-export default function ExploreContainer() {
-  const [projects, setProjects] = useState([])
+export default function MyProjectContainer() {
+  const [projects, setProjects] = useState([]);
 
-  const { address, contract, getProjects, setLoading} = useGlobalContext()
-  
-  const fetchProjects = async() => {
-    setLoading(prev => true);
-    const data = await getProjects();
+  const { address, contract, getUserProjects, setLoading } = useGlobalContext();
+
+  const fetchProjects = async () => {
+    setLoading((prev) => true);
+    const data = await getUserProjects();
     setProjects(data);
     setLoading((prev) => false);
-  }
-
+  };
 
   useEffect(() => {
-    if(contract) fetchProjects();
-  }, [address, contract])
-  
+    if (contract) fetchProjects();
+  }, [address, contract]);
+
   return (
     <div className=" py-20 px-[8vw]">
       <div className="flex justify-center fixed top-[120px] right-0 left-0 z-[99] backdrop-filter backdrop-blur-xl p-4">

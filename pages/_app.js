@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import { MantineProvider } from "@mantine/core";
 import PreLoader from "@/components/preloader";
 import GlobalProvider from "@/contexts/global-context";
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <>
+      <ThirdwebProvider desiredChainId={ChainId.Goerli}>
         <MantineProvider
           theme={{
             colors: {
@@ -58,6 +60,7 @@ export default function App({ Component, pageProps }) {
             </PreLoader>
           </GlobalProvider>
         </MantineProvider>
+        </ThirdwebProvider>
       </>
     </>
   );

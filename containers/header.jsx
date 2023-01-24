@@ -3,100 +3,158 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { UButton } from "@/components/utils";
 import { useGlobalContext } from "@/contexts/global-context";
-import shortened from "@/lib/shortened";
-import { TbCopy } from "react-icons/tb";
-import { SiEthereum } from "react-icons/si";
-import { Loader } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { GrOverview } from "react-icons/gr";
+import { TbWorld } from "react-icons/tb";
+import { GrProjects } from "react-icons/gr";
+import { CgMenuRight } from "react-icons/cg";
+import { Drawer } from "@mantine/core";
+import {useState } from "react";
+import { FaUser } from "react-icons/fa";
+import StartAProject from "@/components/start-project";
 
 function Header() {
   const router = useRouter();
-  const { connectWallet, walletConnected, refreshWallet, getUser } =
-    useGlobalContext();
-  const [addr, setAddr] = useState("");
+  const [open, setOpen] = useState(false);
 
-  async function getAdrr() {
-    const { address } = await getUser();
-    setAddr((prev) => address);
-    return address;
+  const { connect, address } = useGlobalContext();
+
+  async function handleConnect() {
+    if (address) {
+      router.push("/project/create");
+    } else {
+      connect();
+    }
   }
 
   async function copyAddr() {
-    navigator.clipboard.writeText(addr);
+    navigator.clipboard.writeText(address);
   }
 
-  useEffect(() => {
-    refreshWallet();
-    getAdrr();
-
-    return () => {};
-  }, []);
-
   return (
-    <Navigation
-      className={`${
-        router.pathname == "/signin" || router.pathname == "/signup"
-          ? "px-16"
-          : "px-12"
-      } h-[120px] backdrop-filter backdrop-blur-xl border-b`}
-    >
+    <Navigation className="px-12 h-[120px] backdrop-filter backdrop-blur-xl border-b">
       <div
         className="flex flex-row items-center cursor-pointer"
         onClick={() => router.push("/")}
       >
         <Image
-          src="/assets/logo-dark.png"
+          src="/assets/brand_logo.png"
           alt="Brand logo"
-          width={120}
+          width={60}
           height={60}
         />
+        <p className="text-primaryText font-bold text-[64px] font-explora">
+          Platinode
+        </p>
       </div>
-      {router.pathname !== "/signin" && router.pathname !== "/signup" && (
-        <>
-          <div className="flex flex-row gap-x-[30px]">
-            <Navigation.Link href="/" active={router.pathname == "/"}>
-              Overview
-            </Navigation.Link>
-            <Navigation.Link
-              href="/explore"
-              active={router.pathname == "/explore"}
-            >
-              Explore
-            </Navigation.Link>
-            <Navigation.Link
-              href="/how-it-works"
-              active={router.pathname == "/how-it-works"}
-            >
-              How it works
-            </Navigation.Link>
-          </div>
-          <div className="flex flex-row gap-x-[30px] items-center">
-            {walletConnected ? (
-              <div
-                className="hidden md:flex flex-row gap-x-8 items-center text-primaryText font-medium text-lg shadow-lg"
-                onClick={copyAddr}
+
+      <>
+        {/* Mobile menu */}
+        <div>
+          <Drawer
+            opened={open}
+            onClose={() => setOpen(false)}
+            position="left"
+            padding="xl"
+            size="lg"
+          >
+            <div className="flex flex-col items-start gap-[52px] h-screen px-2 pb-3 space-y-1 sm:px-3 pt-[120px] font-ProductSans">
+              <Navigation.Link
+                href="/"
+                active={router.pathname == "/"}
+                onClick={() => setOpen((prev) => false)}
+                className="flex flex-row gap-2"
               >
-                {addr == 0 ? (
-                  <Loader color="black" />
-                ) : (
-                  <div className="flex flex-row items-center justify-center gap-x-1 rounded-lg px-4 py-2 cursor-pointer bg-secondary">
-                    <SiEthereum size={16} color="#66" />
-                    <p>{shortened(addr)}</p>
-                    <TbCopy size="16" />
+                <GrOverview
+                  color="#303c3d"
+                  size="30"
+                  className="cursor-pointer"
+                />
+                Overview
+              </Navigation.Link>
+              <Navigation.Link
+                href="/explore"
+                onClick={() => setOpen((prev) => false)}
+                active={router.pathname == "/explore"}
+                className="flex flex-row gap-2"
+              >
+                <TbWorld color="#303c3d" size="30" className="cursor-pointer" />
+                Explore
+              </Navigation.Link>
+
+              <div className="flex flex-col gap-[30px] items-center mt-[80px]">
+                {address ? (
+                  <div className="flex flex-col gap-8 items">
+                    <Navigation.Link
+                      href="/project/account"
+                      onClick={() => setOpen((prev) => false)}
+                      active={router.pathname == "/explore"}
+                      className="flex flex-row gap-2"
+                    >
+                      <GrProjects
+                        color="#303c3d"
+                        size="30"
+                        className="cursor-pointer"
+                      />
+                      My Projects
+                    </Navigation.Link>
+                    <StartAProject sx="mt-0" />
                   </div>
+                ) : (
+                  <UButton
+                    className="flex items-center bg-secondary px-5 py-6 text-primaryText font-bold shadow-lg rounded-lg"
+                    onClick={handleConnect}
+                  >
+                    Connect Wallet
+                  </UButton>
                 )}
               </div>
-            ) : (
-              <UButton
-                className="flex items-center bg-secondary px-5 py-6 text-primaryText font-bold shadow-lg rounded-lg"
-                onClick={connectWallet}
-              >
-                Connect Wallet
-              </UButton>
-            )}
+            </div>
+          </Drawer>
+        </div>
+
+        <div className="hidden md:flex flex-row gap-x-[30px]">
+          <Navigation.Link href="/" active={router.pathname == "/"}>
+            Overview
+          </Navigation.Link>
+          <Navigation.Link
+            href="/explore"
+            active={router.pathname == "/explore"}
+          >
+            Explore
+          </Navigation.Link>
+          <Navigation.Link
+            href="/how-it-works"
+            active={router.pathname == "/how-it-works"}
+          >
+            How it works
+          </Navigation.Link>
+        </div>
+        <div className="flex flex-row gap-x-[30px] items-center">
+          {address ? (
+            <div className="hidden md:flex flex-row gap-4 items-center">
+              {router.pathname !== "/project/create" && (
+                <StartAProject sx="mt-0" />
+              )}
+              <GrProjects
+                color="#303c3d"
+                size="3"
+                className="cursor-pointer"
+                onClick={() => router.push("/project/account")}
+              />
+            </div>
+          ) : (
+            <UButton
+              className="hidden md:flex items-center bg-secondary px-5 py-6 text-primaryText font-bold shadow-lg rounded-lg"
+              onClick={handleConnect}
+            >
+              Connect Wallet
+            </UButton>
+          )}
+          <div onClick={() => setOpen(true)} className="md:hidden">
+            <CgMenuRight color="#000" size={28} className="cursor-pointer" />
           </div>
-        </>
-      )}
+        </div>
+      </>
     </Navigation>
   );
 }
