@@ -55,7 +55,7 @@ function Header() {
             onClose={() => setOpen(false)}
             position="left"
             padding="xl"
-            size="lg"
+            size="full"
           >
             <div className="flex flex-col items-start gap-[52px] h-screen px-2 pb-3 space-y-1 sm:px-3 pt-[120px] font-ProductSans">
               <Navigation.Link
@@ -97,7 +97,7 @@ function Header() {
                       />
                       My Projects
                     </Navigation.Link>
-                    <StartAProject sx="mt-0" />
+                    <StartAProject sx="mt-0" callback={() => setOpen(prev => false)} />
                   </div>
                 ) : (
                   <UButton

@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
-import { Image } from "@mantine/core";
+import { Image, CopyButton, ActionIcon, Tooltip } from "@mantine/core";
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "@/contexts/global-context";
 import { calculateBarPercentage, daysRemaining } from "@/lib";
 import CountBox from "@/components/countBox";
+import { TbCopy, TbCheck } from "react-icons/tb";
 
 export default function ProjectDetails() {
   const router = useRouter();
@@ -50,9 +51,10 @@ export default function ProjectDetails() {
           <div className="flex-1 flex-col">
             <Image
               src={project?.src}
-              width={640}
+              height={412}
               radius="md"
               alt={project?.title}
+              fit="objectFit"
               className="w-full h-auto object-cover rounded-xl"
             />
             <div className="relative w-full h-[5px] bg-[#3a3a43] mt-2">
@@ -92,6 +94,22 @@ export default function ProjectDetails() {
                     {project?.owner}
                   </h4>
                 </div>
+                <CopyButton value={project?.owner} timeout={2000}>
+                  {({ copied, copy }) => (
+                    <Tooltip
+                      label={copied ? "Copied" : "Copy"}
+                      withArrow
+                      position="right"
+                    >
+                      <ActionIcon
+                        color={copied ? "teal" : "gray"}
+                        onClick={copy}
+                      >
+                        {copied ? <TbCheck size={16} /> : <TbCopy size={16} />}
+                      </ActionIcon>
+                    </Tooltip>
+                  )}
+                </CopyButton>
               </div>
             </div>
 
