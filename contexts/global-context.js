@@ -1,7 +1,14 @@
 import { createContext, useContext, useMemo, useState, useEffect } from "react";
-@thirdweb-dev/react
+import {
+  useAddress,
+  useContract,
+  useMetamask,
+  useContractWrite,
+} from "@thirdweb-dev/react";
 import { ContractAddr } from "@/constants";
 import { ethers } from "ethers"
+
+
 
 const GlobalContext = createContext();
 
