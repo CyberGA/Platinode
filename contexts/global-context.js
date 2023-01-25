@@ -1,10 +1,5 @@
 import { createContext, useContext, useMemo, useState, useEffect } from "react";
-import {
-  useAddress,
-  useContract,
-  useMetamask,
-  useContractWrite,
-} from "@thirdweb-dev/react";
+@thirdweb-dev/react
 import { ContractAddr } from "@/constants";
 import { ethers } from "ethers"
 
