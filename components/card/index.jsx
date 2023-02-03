@@ -11,12 +11,12 @@ function CardNormal({ src, alt, title, desc }) {
         weight={700}
         size="xl"
         mt="md"
-        className="text-primaryText font-plat"
+        className="text-primaryText font-exo"
       >
         {title}
       </Text>
 
-      <Text mt="xs" color="dimmed" size="lg" className="font-plat">
+      <Text mt="xs" color="dimmed" size="lg" className="font-exo">
         {desc}
       </Text>
     </Card>

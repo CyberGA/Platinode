@@ -30,7 +30,7 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-color);
-  font-family: var(--font);
+  font-family: 'Exo', sans-serif;
 }
 
 a {

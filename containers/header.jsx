@@ -9,20 +9,20 @@ import { TbWorld } from "react-icons/tb";
 import { GrProjects } from "react-icons/gr";
 import { CgMenuRight } from "react-icons/cg";
 import { Drawer } from "@mantine/core";
-import {useState } from "react";
+import { useState } from "react";
 import StartAProject from "@/components/start-project";
 
 function Header() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
-  const { connect, address } = useGlobalContext();
+  const { connectWallet, address } = useGlobalContext();
 
   async function handleConnect() {
     if (address) {
       router.push("/project/create");
     } else {
-      connect();
+      connectWallet();
     }
   }
 
@@ -42,7 +42,7 @@ function Header() {
           width={60}
           height={60}
         />
-        <p className="text-primaryText font-bold text-[64px] font-explora">
+        <p className="text-primaryText font-bold text-[28px] lg:text-[54px] font-exo">
           Platinode
         </p>
       </div>
@@ -97,7 +97,10 @@ function Header() {
                       />
                       My Projects
                     </Navigation.Link>
-                    <StartAProject sx="mt-0" callback={() => setOpen(prev => false)} />
+                    <StartAProject
+                      sx="mt-0"
+                      callback={() => setOpen((prev) => false)}
+                    />
                   </div>
                 ) : (
                   <UButton
@@ -160,7 +163,7 @@ function Header() {
               />
             </div>
           ) : (
-            <div onClick={() => setOpen(prev => true)} className="md:hidden">
+            <div onClick={() => setOpen((prev) => true)} className="md:hidden">
               <CgMenuRight color="#000" size={28} className="cursor-pointer" />
             </div>
           )}

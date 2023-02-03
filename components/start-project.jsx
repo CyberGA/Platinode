@@ -1,14 +1,13 @@
 import { UButton } from "@/components/utils";
 import { useRouter } from "next/router";
 
-
-export default function StartAProject({sx, callback = function() {}}) {
+export default function StartAProject({ sx, callback = function () {} }) {
   const router = useRouter();
 
   const clickHandler = () => {
-    callback()
+    callback();
     router.push("/project/create");
-  }
+  };
   return (
     <div className={`flex justify-center w-full mt-12 ${sx}`}>
       <UButton

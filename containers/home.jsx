@@ -9,20 +9,24 @@ import { useEffect, useState } from "react";
 export default function HomeContanier() {
   const [projects, setProjects] = useState([]);
 
-  const { address, contract, getProjects, setLoading } = useGlobalContext();
+  const { address, contract, getProjects, setLoading, walletConnected } =
+    useGlobalContext();
 
   const fetchProjects = async () => {
     setLoading((prev) => true);
     let data = await getProjects();
 
     data = data.filter((res, id) => id < 3);
-    setProjects(data);
+    setProjects((prev) => data);
     setLoading((prev) => false);
   };
 
   useEffect(() => {
-    if (contract) fetchProjects();
+    if (contract) {
+      fetchProjects();
+    }
   }, [address, contract]);
+
   return (
     <div className="flex flex-col">
       <div className="bg-white px-[5vw] md:px-[15vw]">
@@ -114,7 +118,7 @@ export default function HomeContanier() {
         {projects.length !== 0 && (
           <div className="flex flex-row justify-end w-full mt-8">
             <Link href="/explore" legacyBehavior>
-              <a className="text-[20px] text-primaryText text-right underline hover:text-secondary ease-in duration-300">
+              <a className="text-[20px] text-primaryText text-right underline underline-offset-2 hover:text-secondary ease-in duration-300">
                 {"See more >>"}
               </a>
             </Link>

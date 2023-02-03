@@ -26,7 +26,7 @@ export default function MyProjectContainer() {
         <div>
           <p className="text-primaryText font-bold text-[24px]">My Projects</p>
         </div>
-        <div className="flex flex-row items-center pr-[16px] gap-x-[16px] border border-[#485E5F] rounded-[5px] h-[60px] w-full max-w-[616px] bg-white clip">
+        {/* <div className="flex flex-row items-center pr-[16px] gap-x-[16px] border border-[#485E5F] rounded-[5px] h-[60px] w-full max-w-[616px] bg-white clip">
           <UInput type="text" placeholder="Search for a project" />
           <UButton
             type="submit"
@@ -35,7 +35,7 @@ export default function MyProjectContainer() {
           >
             <BsArrowRight color="303c3d" size="24px" />
           </UButton>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-wrap mt-[100px] gap-[26px] ">
         {projects.map((project, id) => (
