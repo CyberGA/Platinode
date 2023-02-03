@@ -4,10 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'plat': [ 'Rowdies', "cursive", "ui-monospace, Menlo", "Monaco", 'Cascadia Mono', 'Segoe UI Mono',
-        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-        'Fira Mono', 'Droid Sans Mono', 'Courier New', "monospace"],
-        'explora': [ 'Explora', "cursive", "ui-monospace, Menlo", "Monaco", 'Cascadia Mono', 'Segoe UI Mono']
+        'exo': [ 'Exo', 'sans-serif', "ui-monospace, Menlo", "Monaco", 'Cascadia Mono', 'Segoe UI Mono']
       },
       colors: {
         primaryText: "#303c3d",

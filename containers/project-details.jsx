@@ -74,8 +74,8 @@ export default function ProjectDetails() {
           <div className="flex flex-row md:flex-col flex-1 md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
             <CountBox title="Days Left" value={countDown} />
             <CountBox
-              title={`Raised of ${project?.amountRequested}`}
-              value={project?.amountReceived}
+              title={`Raised of ${project?.amountRequested}ETH`}
+              value={`${project?.amountReceived}ETH`}
             />
             <CountBox title="Total Donators" value={donators.length} />
           </div>
@@ -84,49 +84,51 @@ export default function ProjectDetails() {
         <div className="mt-[60px] flex lg:flex-row flex-col gap-5">
           <div className="flex-[2] flex flex-col gap-[40px]">
             <div>
-              <h4 className="font-epilogue font-semibold text-[18px] text-primaryText uppercase">
+              <h4 className="font-exo font-semibold text-[18px] text-primaryText uppercase">
                 Creator
               </h4>
 
               <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
-                <div>
-                  <h4 className="font-epilogue font-semibold text-[14px] text-primaryText break-all">
+                  <h4 className="font-exo font-semibold text-[14px] text-primaryText break-all">
                     {project?.owner}
+                    <CopyButton value={project?.owner} timeout={2000}>
+                      {({ copied, copy }) => (
+                        <Tooltip
+                          label={copied ? "Copied" : "Copy"}
+                          withArrow
+                          position="right"
+                        >
+                          <ActionIcon
+                            color={copied ? "teal" : "gray"}
+                            onClick={copy}
+                          >
+                            {copied ? (
+                              <TbCheck size={16} />
+                            ) : (
+                              <TbCopy size={16} />
+                            )}
+                          </ActionIcon>
+                        </Tooltip>
+                      )}
+                    </CopyButton>
                   </h4>
-                </div>
-                <CopyButton value={project?.owner} timeout={2000}>
-                  {({ copied, copy }) => (
-                    <Tooltip
-                      label={copied ? "Copied" : "Copy"}
-                      withArrow
-                      position="right"
-                    >
-                      <ActionIcon
-                        color={copied ? "teal" : "gray"}
-                        onClick={copy}
-                      >
-                        {copied ? <TbCheck size={16} /> : <TbCopy size={16} />}
-                      </ActionIcon>
-                    </Tooltip>
-                  )}
-                </CopyButton>
               </div>
             </div>
 
             <div>
-              <h4 className="font-epilogue font-semibold text-[18px] text-primaryText uppercase">
+              <h4 className="font-exo font-semibold text-[18px] text-primaryText uppercase">
                 Project Details
               </h4>
 
               <div className="mt-[20px]">
-                <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">
+                <p className="font-exo font-normal text-[16px] text-[#808191] leading-[26px] text-justify">
                   {project?.desc}
                 </p>
               </div>
             </div>
 
             <div>
-              <h4 className="font-epilogue font-semibold text-[18px] text-primaryText uppercase">
+              <h4 className="font-exo font-semibold text-[18px] text-primaryText uppercase">
                 Donators
               </h4>
 
@@ -135,18 +137,18 @@ export default function ProjectDetails() {
                   donators.map((item, index) => (
                     <div
                       key={`${item.donator}-${index}`}
-                      className="flex justify-between items-center gap-4"
+                      className="flex justify-between items-center gap-4 px-2 sm:px-0"
                     >
-                      <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">
+                      <p className="font-exo font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-all">
                         {index + 1}. {item.donator}
                       </p>
-                      <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">
+                      <p className="font-exo font-normal text-[16px] text-[#808191] leading-[26px] break-all">
                         {item.donation}
                       </p>
                     </div>
                   ))
                 ) : (
-                  <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">
+                  <p className="font-exo font-normal text-[16px] text-[#808191] leading-[26px] text-justify">
                     No donators yet. Be the first one!
                   </p>
                 )}
@@ -156,7 +158,7 @@ export default function ProjectDetails() {
 
           <div className="flex-1">
             <div className="mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px] max-w-sm">
-              <p className="font-epilogue fount-medium text-[20px] leading-[30px] text-center text-[#808191]">
+              <p className="font-exo fount-medium text-[20px] leading-[30px] text-center text-[#808191]">
                 Fund the project
               </p>
               <div className="mt-[30px]">
@@ -164,7 +166,7 @@ export default function ProjectDetails() {
                   type="number"
                   placeholder="ETH 0.1"
                   step="0.01"
-                  className="w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]"
+                  className="w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-exo text-white text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value.toString())}
                 />

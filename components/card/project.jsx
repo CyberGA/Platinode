@@ -47,7 +47,7 @@ export default function ProjectCard({
   };
 
   return (
-    <Card shadow="sm" p="lg" radius="md" withBorder className="sm:w-[288px]">
+    <Card shadow="sm" p="lg" radius="md" withBorder className="sm:w-[288px] md:w-[350px]">
       <Card.Section>
         {isLoading ? (
           <Loader color="Cyan.3" />
@@ -57,36 +57,36 @@ export default function ProjectCard({
       </Card.Section>
 
       <Group position="apart" mt="md" mb="xs">
-        <Text weight={700} size="xl" className="font-plat">
+        <Text weight={700} size="xl" className="font-exo">
           {title}
         </Text>
         <Badge
           color={expires && daysRemaining(expires) !== 0 ? "green" : "pink"}
           variant="light"
           p="md"
-          className="font-plat"
+          className="font-exo"
         >
           {expires && daysRemaining(expires) !== 0 ? "Live" : "Close"}
         </Badge>
       </Group>
 
-      <Text size="md" color="dimmed" className="font-plat">
+      <Text size="md" color="dimmed" className="font-exo">
         {desc.substring(0, 80) + "...."}
       </Text>
 
       <Divider my="md" />
 
       <div className="mb-2">
-        <Text size="sm" color="dimmed" className="font-plat">
+        <Text size="sm" color="dimmed" className="font-exo">
           {`by ${owner && shortened(owner)}`}
         </Text>
       </div>
-      <Text size="md" color="dimmed" className="font-plat">
+      <Text size="md" color="dimmed" className="font-exo">
         <span className="font-bold">{`${amountReceived}ETH`}</span>
         {` raised of `}
         <span className="font-bold">{`${amountRequested}ETH`}</span>
       </Text>
-      <Text size="md" color="dimmed" className="font-plat">
+      <Text size="md" color="dimmed" className="font-exo">
         <span className="font-bold">{`${
           expires && daysRemaining(expires)
         }`}</span>
@@ -107,7 +107,7 @@ export default function ProjectCard({
         fullWidth
         mt="md"
         radius="md"
-        className="text-secondary font-plat ease-in duration-300"
+        className="text-secondary font-exo ease-in duration-300"
         onClick={viewDetailsHandle}
       >
         View details
